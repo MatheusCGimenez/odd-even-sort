@@ -13,6 +13,7 @@ void oddEvenSort(int arr[], int n) {
     while (!estaOrdenado) {
         estaOrdenado = true;
 
+        // compara e troca os elementos em posições ímpares (1-2, 3-4, 5-6, ...)
         for (int i = 1; i <= n - 2; i = i + 2) {
             if (arr[i] > arr[i + 1]) {
                 trocar(&arr[i], &arr[i + 1]);
@@ -20,7 +21,8 @@ void oddEvenSort(int arr[], int n) {
             }
         }
 
-        for (int i = 0; i <= n - 2; i = i + 2) {
+        // compara e troca os elementos em posições pares (0-1, 2-3, 4-5, ...)
+        for (int i = 0; i <= n - 2; i = i + 2) { 
             if (arr[i] > arr[i + 1]) {
                 trocar(&arr[i], &arr[i + 1]);
                 estaOrdenado = false;
